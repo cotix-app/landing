@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import LaunchCountdown from "./components/LaunchCountdown";
 
 const Landing: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Landing: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="font-semibold tracking-tight text-lg">Cotix</span>
           <a
-            href="https://app.cotix.com"
+            href="https://cotix.vercel.app"
             className="hidden md:inline-flex bg-emerald-500 text-slate-900 px-5 py-2 rounded-xl font-medium hover:bg-emerald-400 transition"
           >
             Probar ahora
@@ -48,7 +49,7 @@ const Landing: React.FC = () => {
         </motion.p>
 
         <motion.a
-          href="https://app.cotix.com"
+          href="https://cotix.vercel.app"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -63,6 +64,8 @@ const Landing: React.FC = () => {
           Sin registro complicado. Empezá en segundos.
         </p>
       </section>
+
+      <LaunchCountdown />
 
       {/* PROBLEMA */}
       <section className="py-24 px-6 bg-slate-900/60 border-t border-slate-800 text-center">
@@ -141,7 +144,7 @@ const Landing: React.FC = () => {
         </p>
 
         <a
-          href="https://app.cotix.com"
+          href="https://cotix.vercel.app"
           className="inline-flex items-center justify-center px-12 py-5 text-xl font-semibold text-slate-900 bg-emerald-500 rounded-2xl shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 hover:scale-105 transition-all duration-300"
         >
           Empezar ahora
