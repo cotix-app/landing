@@ -9,7 +9,7 @@ interface TimeLeft {
 
 const LaunchCountdown: React.FC = () => {
   // 🔥 CAMBIÁ ESTA FECHA POR LA REAL
-  const targetDate = new Date("2026-31-03T00:00:00").getTime();
+  const targetDate = new Date("2026-03-31T00:00:00").getTime();
 
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date().getTime();
