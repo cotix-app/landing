@@ -4,17 +4,16 @@ import React from "react";
 const Landing: React.FC = () => {
   return (
     <div className="bg-slate-950 text-white min-h-screen overflow-x-hidden relative selection:bg-emerald-500 selection:text-black">
-      
-      {/* Background gradient */}
+
+      {/* Background Glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-emerald-500/10 blur-[160px] rounded-full" />
       </div>
 
       {/* NAVBAR */}
-      <header className="fixed top-0 w-full z-50 backdrop-blur-lg bg-slate-950/70 border-b border-slate-800">
+      <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-slate-950/70 border-b border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="font-semibold tracking-tight text-lg">Cotix</span>
-
           <a
             href="https://app.cotix.com"
             className="hidden md:inline-flex bg-emerald-500 text-slate-900 px-5 py-2 rounded-xl font-medium hover:bg-emerald-400 transition"
@@ -26,6 +25,10 @@ const Landing: React.FC = () => {
 
       {/* HERO */}
       <section className="px-6 pt-40 pb-28 max-w-6xl mx-auto text-center">
+        <p className="text-emerald-400 text-sm mb-4 tracking-wide">
+          Para técnicos en refrigeración, HVAC y servicios en campo
+        </p>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,6 +58,10 @@ const Landing: React.FC = () => {
         >
           Probar ahora
         </motion.a>
+
+        <p className="text-slate-500 text-sm mt-4">
+          Sin registro complicado. Empezá en segundos.
+        </p>
       </section>
 
       {/* PROBLEMA */}
@@ -70,26 +77,26 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
-      {/* SOLUCIÓN */}
+      {/* FLUJO VISUAL */}
       <section className="py-28 px-6 max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-semibold mb-16">
-          Con Cotix lo resolvés en minutos
+          Cómo funciona
         </h2>
 
-        <div className="grid sm:grid-cols-2 gap-8 text-slate-300 text-lg">
+        <div className="grid sm:grid-cols-3 gap-10">
           {[
-            "Cargás cliente",
-            "Seleccionás equipo",
-            "Agregás tareas",
-            "Se calcula el total automáticamente",
-            "Generás PDF profesional",
-            "Todo en menos de 3 minutos",
+            { step: "1", text: "Cargás cliente y equipo" },
+            { step: "2", text: "Agregás tareas y se calcula el total" },
+            { step: "3", text: "Generás y enviás el PDF profesional" },
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300"
+              className="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-emerald-500/40 hover:-translate-y-2 transition-all duration-300"
             >
-              {item}
+              <div className="text-emerald-400 text-3xl font-bold mb-4">
+                {item.step}
+              </div>
+              <p className="text-slate-300">{item.text}</p>
             </div>
           ))}
         </div>
@@ -125,9 +132,13 @@ const Landing: React.FC = () => {
 
       {/* CTA FINAL */}
       <section className="py-32 px-6 text-center">
-        <h2 className="text-2xl md:text-5xl font-semibold mb-10">
-          Empezá a cotizar mejor hoy.
+        <h2 className="text-2xl md:text-5xl font-semibold mb-6">
+          Cotizá mejor desde hoy.
         </h2>
+
+        <p className="text-slate-400 mb-10">
+          Mostrate profesional en cada trabajo.
+        </p>
 
         <a
           href="https://app.cotix.com"
